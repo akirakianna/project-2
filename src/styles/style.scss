@@ -221,10 +221,8 @@ footer {
   font-family: futura;
   font-style: italic;
   color: white;
-  // padding-left: 25px;
   animation: glitch 1s linear infinite;
 }
-
 
 @keyframes glitch {
   2%,64%{
@@ -377,7 +375,6 @@ border: 2px solid #677880;
 footer {
   display: flex;
   flex-direction: row;
-  // justify-content: space-evenly;
   text-align: center;
   
 }
@@ -386,9 +383,3 @@ p#by {
   padding: 0;
 }
 
-
-// @media only screen and (min-width: 650px) {
-//   body {
-//     height: 100vh;
-//   }
-// }

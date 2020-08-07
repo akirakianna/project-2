@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
-
 import { Controller, Scene } from 'react-scrollmagic'
 
 const SouthernGothic = () => {
@@ -26,11 +24,9 @@ const SouthernGothic = () => {
       setSimilarArtists([])
     } else {
       const id = event.target.id
-
       fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
         .then(resp => resp.json())
         .then(data => {
-
           const newSimilarArtists = data._embedded.artists.map((similarArtist) => {
             return { ...similarArtist, originalArtistID: id }
           })
@@ -45,7 +41,6 @@ const SouthernGothic = () => {
           })
           setKey(buttonKey)
           setSimilarArtists(result)
-
         })
     }
   }

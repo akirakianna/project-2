@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-
-
 import { Controller, Scene } from 'react-scrollmagic'
 
 
@@ -29,19 +26,13 @@ const MigrationArtists = () => {
     if (buttonKey === key) {
       setSimilarArtists([])
     } else {
-
-
       const id = event.target.id
-
       fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
         .then(resp => resp.json())
         .then(data => {
-
           const newSimilarArtists = data._embedded.artists.map((similarArtist) => {
             return { ...similarArtist, originalArtistID: id }
-
           })
-
           const test = similarArtists.concat(newSimilarArtists)
           const result = []
           const seen = {}
@@ -53,7 +44,6 @@ const MigrationArtists = () => {
           })
           setKey(buttonKey)
           setSimilarArtists(result)
-
         })
     }
   }
@@ -71,7 +61,6 @@ const MigrationArtists = () => {
             </div>
           </Scene>
         </Controller>
-
         <div className="similarArtistContainer">
           {similarArtists.map((similarArtist) => {
             if (similarArtist.originalArtistID === artist.id) {
@@ -79,7 +68,6 @@ const MigrationArtists = () => {
                 <div> {similarArtist.name.toUpperCase()} </div>
                 <img src={similarArtist._links.thumbnail.href} alt={similarArtist.name} />
               </div>
-
             } else {
               return null
             }

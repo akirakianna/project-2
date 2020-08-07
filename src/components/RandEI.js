@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-
 import { Controller, Scene } from 'react-scrollmagic'
 
 const Artists = () => {
@@ -13,7 +11,9 @@ const Artists = () => {
     fetch('https://api.artsy.net/api/artists?cursor=100%3A5ee9c1c34ed9d50007d748b9&gene_id=4de93fa9c182420001004327', { headers: { 'X-XAPP-Token': `${token}` } })
       .then(resp => resp.json())
       .then(data => {
+        console.log(data)
         const newData = data._embedded.artists.map((artist) => {
+          //! what is this doing?? ask again filtering through the data to...??
           return { ...artist, showSimilarArtist: false }
 
         })
@@ -24,36 +24,45 @@ const Artists = () => {
   }, [])
 
   function displaySimilar(event, buttonKey) {
+    //* If buttonKey matches key set similar artists to be an empty array (i.e display none)
     if (buttonKey === key) {
       setSimilarArtists([])
+      //! We have the id of artist from clicking on button.
     } else {
+      //* Fetching from url in button and taking response from url
+      //* Setting id to equal button id (which is the original artist id)
       const id = event.target.id
       fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
         .then(resp => resp.json())
         .then(data => {
-
+          //* Mapping through the data from the response and saving this mapped data to newSimilarArtists
           const newSimilarArtists = data._embedded.artists.map((similarArtist) => {
+            //* Return an object with all of the similar artists the api gave with an additonal key which matches the artist id of button the user clicked on.
             return { ...similarArtist, originalArtistID: id }
-
+            //! Creates a new array of objects with has the similar artist with the original artists' id.
           })
-
-          const test = similarArtists.concat(newSimilarArtists)
+          //* Making a new array from both of our exisitng arrays.
+          const combinedArtists = similarArtists.concat(newSimilarArtists)
           const result = []
-          const seen = {}
-          test.forEach((artist) => {
-            if (!seen.hasOwnProperty(artist.id)) {
+          const artistExists = {}
+          //* Going through new combined array for each artist, if artistExists doesn't have property of artist.id push it to results array.
+          combinedArtists.forEach((artist) => {
+            //!If the object has prop artist.id, it does nothing. 
+            if (!artistExists.hasOwnProperty(artist.id)) {
               result.push(artist)
-              seen[artist.id] = true
+              //!If not, after we push to the array, we make it true so the artist can't be added to the result array again(case for duplication.
+              artistExists[artist.id] = true
             }
           })
           setKey(buttonKey)
+          //! Now similarArtists in state becomes all of the similar artists pushed to the result array by line 53.
           setSimilarArtists(result)
         })
     }
   }
+  
   return <>
     <h1>RACIAL AND ETHNIC IDENTITY</h1>
-
     <div className="cardSection">
       <p>&quot;From its increased significance at the height of European colonialism to the foundations of Enlightenment-era pseudoscience, the concept of race has been used to categorize humans along the lines of shared characteristics in order to understand human difference. Racism, which sociologist Howard Winant defines as “that which creates or reproduces hierarchical social structures based on essentialized racial categories,” has fueled unthinkable violations of human life.&quot;</p>
       {artistsData.map((artist, index) => {
@@ -83,15 +92,8 @@ const Artists = () => {
       })}
     </div>
   </>
-
-
-
-
-
 }
 
 
-
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTI5MjgxMzYsImlhdCI6MTU5MjMyMzMzNiwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlZThlZDA4NWU1OTNkMDAwZTMxZWI2YyJ9.CztdCV8RDhXO5JbxoSjRG-pxjTej6vnmYdvVrN9uTqI'
-
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTU3NjM1MjUsImlhdCI6MTU5NTE1ODcyNSwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMTQzMGM1M2Q0NDQ1MDAwZTIyMGEzMSJ9.fd4DmPj5Qlh7bMKPH8BJQLjI2DlZR4vL_Kco5D1DEYs'
 export default Artists
