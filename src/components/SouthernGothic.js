@@ -13,7 +13,6 @@ const SouthernGothic = () => {
       .then(data => {
         const newData = data._embedded.artists.map((artist) => {
           return { ...artist, showSimilarArtist: false }
-
         })
         setArtistsData(newData)
       })
@@ -77,6 +76,6 @@ const SouthernGothic = () => {
 }
 
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTI5MjgxMzYsImlhdCI6MTU5MjMyMzMzNiwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVlZThlZDA4NWU1OTNkMDAwZTMxZWI2YyJ9.CztdCV8RDhXO5JbxoSjRG-pxjTej6vnmYdvVrN9uTqI'
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
 
 export default SouthernGothic

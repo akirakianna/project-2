@@ -13,18 +13,14 @@ const Artists = () => {
       .then(data => {
         console.log(data)
         const newData = data._embedded.artists.map((artist) => {
-          //! what is this doing?? ask again filtering through the data to...??
           return { ...artist, showSimilarArtist: false }
-
         })
-
         setArtistsData(newData)
-
       })
   }, [])
 
   function displaySimilar(event, buttonKey) {
-    //* If buttonKey matches key set similar artists to be an empty array (i.e display none)
+    //* If buttonKey matches key, set similar artists to be an empty array (i.e display none)
     if (buttonKey === key) {
       setSimilarArtists([])
       //! We have the id of artist from clicking on button.
@@ -60,7 +56,7 @@ const Artists = () => {
         })
     }
   }
-  
+
   return <>
     <h1>RACIAL AND ETHNIC IDENTITY</h1>
     <div className="cardSection">
@@ -95,5 +91,5 @@ const Artists = () => {
 }
 
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTU3NjM1MjUsImlhdCI6MTU5NTE1ODcyNSwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMTQzMGM1M2Q0NDQ1MDAwZTIyMGEzMSJ9.fd4DmPj5Qlh7bMKPH8BJQLjI2DlZR4vL_Kco5D1DEYs'
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
 export default Artists

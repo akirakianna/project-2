@@ -8,6 +8,21 @@ By [Kianna Love](https://github.com/akirakianna) and [Raquel Cruickshank](https:
 
 This was my second project, but my first Hackathon at General Assembly. The goal was to build a React (single page) application which consumes a public API. It was to be built in paired teams and be completed within 48 hours.
 
+## Table of Contents
+
+1. [Project Brief](#Project-Brief)
+2. [Technologies Used](#Technologies-Used)
+3. [Approach](#Approach)
+ - [Thought Process](#Thought-Process)
+ - [Day 1](#Day-1)
+ - [Day 2](#Day-2)
+4. [Challenges](#Challenges)
+5. [Victories](#Victories)
+6. [Bugs](#Bugs)
+7. [Lessons Learned](#Lessons-Learned)
+8. [Future Features](#Future-Features)
+9. [Credit](#Credit)
+
 ## Project Brief
 
 The project must:
@@ -22,7 +37,8 @@ The project must:
 ## Technologies Used
 
 - HTML
-- CSS/ SCSS
+- CSS/ SASS
+- JavaScript
 - React.js
 - Insomnia
 - Public API - Artsy
@@ -47,7 +63,11 @@ Within this endpoint we could also return each artist's own information and real
 
 ![Similar artist Insomnia nested](./src/styles/images/similar-artist-nested.png)
 
-We envisioned displaying the intial 5 artists as cards on our page that would have a button component underneath which you could click to show the related similar artists. (wireframe?)
+We envisioned displaying the initial 5 artists as cards on our page which would have a button component underneath, that when clicked would show the related similar artists. 
+
+![Artist Wireframe](./src/styles/images/ArtistPageWireframe.png)
+
+
 
 ### Day 1
 
@@ -115,7 +135,7 @@ export default App
 
 #### Home Page Component
 
-Our home page gave us a chance to experiment with some fun react libraries combined with CSS/SCSS styling. We installed react scroll magic and to create a simple fade in animation utilised keyframes for our typewriter animation.
+Our home page gave us a chance to experiment with some fun React libraries combined with CSS/SASS styling. We installed React Scroll Magic and to create a simple fade in animation utilised keyframes for our typewriter animation.
 
 ![animated statistics and artist spotlight](./src/styles/images/Animation.mov)
 
@@ -134,8 +154,7 @@ const Artists = () => {
 ```
 An example of a side effect, and the side effect used in this case, is data fetching.
 
-
-In order to retrieve the information from the API we need to make a fetch request. This fetch function is a promise (an object with the option to resolve or reject - it resolves when the information has been returned): 
+In order to retrieve the information from the API, we needed to make a fetch request. This fetch function is a promise (an object with the option to resolve or reject - it resolves when the information has been returned): 
 
 ```js
  useEffect(() => {
@@ -264,7 +283,10 @@ function displaySimilar(event, buttonKey) {
 
 After this it was easy to create a couple of additional pages (Southern Gothic and Migration) using the same Artist component and functionality. 
 
-[screenshots]
+![Southern Gothic](./src/styles/images/SouthernGothic.png)
+![Southern Gothic Similar](./src/styles/images/SouthernGothicSimilar.png)
+![Migration](./src/styles/images/Migration.png)
+![Migration Similar](./src/styles/images/MigrationSimilar.png)
 
 ## Challenges
 
@@ -274,9 +296,11 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 
 ## Victories
 
-- The API we chose updates the main artists we features every day so you can see new artists each day.
-- From a past solo project I was able to figure out a way to write the functionality so you can also hide similar artists once they have been displayed.
-- Styling - we had a lot of fun with the colour scheme and making our application's UI visually appealing.
+- From a past solo project, I was able to figure out how to write the functionality so you can 'hide' the similar artists card on a second click. [See above]
+- Teamwork 
+ - this was my first paired project and it was a great experience. We were able to easily combine our ideas and plan out how we wanted to go about our build. We spent the initial stages of the project pair programming (using the driver navigator relationship) to get the intial setup / MVP outline coded, before moving on to working on separate areas. 
+- Styling
+ - As we were working within the same SCSS file, we had to have excellent communication to avoid conflicts. We had a lot of fun with the colour scheme and making our application's UI visually appealing. -
 
 ## Bugs
 - Animation bugs, the fade in scroll animation on feature pages shudders at points.
@@ -285,13 +309,13 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 
 ## Lessons Learned
 - Design with mobile first in mind.  
-- Plan ahead for API selection - we spent too long trying to find the right one to use.
-- We also learned the complexity of accessing specific information from public APIs.
+- Plan ahead for API selection - we spent too long trying to find one that would work with our general idea.
+- We also learned the complexity of using and accessing specific information from public APIs. 
 
 ## Future Features
 
 - Fully responsive (currently not responsive)
-- Similar artist links for each of the similar artists linked (accordion effect).
+- Similar artist links for each of the similar artists linked (continued accordion effect).
 
 ## Credit
 
