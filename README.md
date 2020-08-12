@@ -13,9 +13,9 @@ This was my second project, but my first Hackathon at General Assembly. The goal
 1. [Project Brief](#Project-Brief)
 2. [Technologies Used](#Technologies-Used)
 3. [Approach](#Approach)
-  - [Thought Process](#Thought-Process)
-  - [Day 1](#Day-1)
-  - [Day 2](#Day-2)
+    - [Thought Process](#Thought-Process)
+    - [Day 1](#Day-1)
+    - [Day 2](#Day-2)
 4. [Challenges](#Challenges)
 5. [Victories](#Victories)
 6. [Bugs](#Bugs)
@@ -248,7 +248,7 @@ if (buttonKey === key) {
       setSimilarArtists([])
 ```
 
-![animated statistics and artist spotlight](./src/styles/images/similarArtists.mov)
+![Animated hiding similar artists](https://media.giphy.com/media/lrPLp6hE6g0JKM5jAg/giphy.gif)
 
 We created a function called ``displaySimilar()`` which would handle all of this functionality:
 
