@@ -1,4 +1,4 @@
-###![GA Logo](./src/styles/images/ga-logo.png)
+![GA Logo](./src/styles/images/ga-logo.png)
 
 # PROJECT 2 - /TITLED 
 
@@ -7,6 +7,8 @@ By [Kianna Love](https://github.com/akirakianna) and [Raquel Cruickshank](https:
 ## Overview
 
 This was my second project, but my first Hackathon at General Assembly. The goal was to build a React (single page) application which consumes a public API. It was to be built in paired teams and be completed within 48 hours.
+
+You can find our deployed project online here: [/TITLED](https://kianna.love/project-2/#/)
 
 ## Table of Contents
 
