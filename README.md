@@ -13,9 +13,9 @@ This was my second project, but my first Hackathon at General Assembly. The goal
 1. [Project Brief](#Project-Brief)
 2. [Technologies Used](#Technologies-Used)
 3. [Approach](#Approach)
- - [Thought Process](#Thought-Process)
- - [Day 1](#Day-1)
- - [Day 2](#Day-2)
+  - [Thought Process](#Thought-Process)
+  - [Day 1](#Day-1)
+  - [Day 2](#Day-2)
 4. [Challenges](#Challenges)
 5. [Victories](#Victories)
 6. [Bugs](#Bugs)
@@ -137,7 +137,7 @@ export default App
 
 Our home page gave us a chance to experiment with some fun React libraries combined with CSS/SASS styling. We installed React Scroll Magic and to create a simple fade in animation utilised keyframes for our typewriter animation.
 
-![animated statistics and artist spotlight](./src/styles/images/Animation.mov)
+![animated statistics and artist spotlight](https://media.giphy.com/media/YrO3uSwWE5GlxCp4KI/giphy.gif)
 
 #### Racial and Ethnic Identity Component
 
