@@ -26,7 +26,7 @@ const MigrationArtists = () => {
       setSimilarArtists([])
     } else {
       const id = event.target.id
-      fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
+      fetch(event.target.value, { headers: { 'X-XAPP-Token': token } })
         .then(resp => resp.json())
         .then(data => {
           const newSimilarArtists = data._embedded.artists.map((similarArtist) => {
@@ -78,6 +78,5 @@ const MigrationArtists = () => {
   </div>
 }
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
 
 export default MigrationArtists

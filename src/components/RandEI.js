@@ -32,7 +32,7 @@ const Artists = () => {
       //* Fetching from url in button and taking response from url
       //* Setting id to equal button id (which is the original artist id)
       const id = event.target.id
-      fetch(event.target.value, { headers: { 'X-XAPP-Token': `${ARTSY_TOKEN}` } })
+      fetch(event.target.value, { headers: { 'X-XAPP-Token': token } })
         .then(resp => resp.json())
         .then(data => {
           //* Mapping through the data from the response and saving this mapped data to newSimilarArtists
@@ -95,5 +95,4 @@ const Artists = () => {
 }
 
 
-// const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
 export default Artists
