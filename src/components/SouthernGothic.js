@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { ApiContext } from './ApiContext'
 import { Controller, Scene } from 'react-scrollmagic'
 
 const SouthernGothic = () => {
 
   const [artistsData, setArtistsData] = useState([])
   const [similarArtists, setSimilarArtists] = useState([])
+  const token = useContext(ApiContext)
   const [key, setKey] = useState('')
 
   useEffect(() => {
-    fetch('https://api.artsy.net/api/artists?gene_id=5266f6c2275b2414e300025b', { headers: { 'X-XAPP-Token': `${token}` } })
+    fetch('https://api.artsy.net/api/artists?gene_id=5266f6c2275b2414e300025b', { headers: { 'X-XAPP-Token': token } })
       .then(resp => resp.json())
       .then(data => {
         const newData = data._embedded.artists.map((artist) => {

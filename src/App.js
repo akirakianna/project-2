@@ -10,6 +10,8 @@ import MigrationArtists from './components/Migration'
 import SouthernGothic from './components/SouthernGothic'
 import NavBar from './components/NavBar'
 import About from './components/About'
+import { ApiProvider } from './components/ApiContext'
+
 
 const App = () => {
 
@@ -18,9 +20,11 @@ const App = () => {
     <NavBar />
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/randei" component={RandEI} />
-      <Route exact path="/migration" component={MigrationArtists} />
-      <Route exact path="/sg" component={SouthernGothic} />
+      <ApiProvider>
+        <Route exact path="/randei" component={RandEI} />
+        <Route exact path="/migration" component={MigrationArtists} />
+        <Route exact path="/sg" component={SouthernGothic} />
+      </ApiProvider>
       <Route exact path="/about" component={About} />
     </Switch>
   </HashRouter>

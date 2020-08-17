@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Controller, Scene } from 'react-scrollmagic'
+import { ApiContext } from './ApiContext'
+
+
 
 const Artists = () => {
 
   const [artistsData, setArtistsData] = useState([])
   const [similarArtists, setSimilarArtists] = useState([])
+  const token = useContext(ApiContext)
   const [key, setKey] = useState('')
 
   useEffect(() => {
-    fetch('https://api.artsy.net/api/artists?cursor=100%3A5ee9c1c34ed9d50007d748b9&gene_id=4de93fa9c182420001004327', { headers: { 'X-XAPP-Token': `${token}` } })
+    fetch('https://api.artsy.net/api/artists?cursor=100%3A5ee9c1c34ed9d50007d748b9&gene_id=4de93fa9c182420001004327', { headers: { 'X-XAPP-Token': token } })
       .then(resp => resp.json())
       .then(data => {
         console.log(data)
@@ -17,7 +21,7 @@ const Artists = () => {
         })
         setArtistsData(newData)
       })
-  }, [])
+  }, [token])
 
   function displaySimilar(event, buttonKey) {
     //* If buttonKey matches key, set similar artists to be an empty array (i.e display none)
@@ -28,7 +32,7 @@ const Artists = () => {
       //* Fetching from url in button and taking response from url
       //* Setting id to equal button id (which is the original artist id)
       const id = event.target.id
-      fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
+      fetch(event.target.value, { headers: { 'X-XAPP-Token': `${ARTSY_TOKEN}` } })
         .then(resp => resp.json())
         .then(data => {
           //* Mapping through the data from the response and saving this mapped data to newSimilarArtists
@@ -91,5 +95,5 @@ const Artists = () => {
 }
 
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
+// const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZWU4YzAxOGFiMWRiZDAwMGY0YmYyYjIiLCJleHAiOjE1OTc0NzYwMDQsImlhdCI6MTU5Njg3MTIwNCwiYXVkIjoiNWVlOGMwMThhYjFkYmQwMDBmNGJmMmIyIiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjVmMmU1MjI0MmQyY2Q1MDAwZGRmZDVmOSJ9.YUJp6M91Mzha3lYjfKxgXxp4fxQZAbgevW2tnCI6S8A'
 export default Artists
