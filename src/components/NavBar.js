@@ -13,7 +13,7 @@ const NavBar = () => {
       ABOUT
     </Link>
     <Link to="/randei" className="button">
-      RACE AND IDENTITY
+      RACIAL AND ETHNIC IDENTITY
     </Link>
     <Link to="/migration" className="button">
       MIGRATION
