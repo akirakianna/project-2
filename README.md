@@ -2,7 +2,7 @@
 
 # PROJECT 2 - /TITLED 
 
-By [Kianna Love](https://github.com/akirakianna) and [Raquel Cruickshank](https://github.com/cruickshankprc)
+By [Kianna Love](https://github.com/akirakianna) and [Raquel Cruickshank](https://github.com/cruickshankrpc)
 
 ## Overview
 
