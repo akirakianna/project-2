@@ -8,7 +8,7 @@ By [Kianna Love](https://github.com/akirakianna) and [Raquel Cruickshank](https:
 
 This was my second project, but my first Hackathon at General Assembly. The goal was to build a React (single page) application which consumes a public API. It was to be built in paired teams and be completed within 48 hours.
 
-You can find our deployed project online here: [/TITLED](https://kianna.love/project-2/#/)
+You can find our deployed project online here: [/TITLED](https://kianna.love/TITLED/#/)
 
 ## Table of Contents
 
@@ -306,8 +306,9 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 
 ## Bugs
 - Animation bugs, the fade in scroll animation on feature pages shudders at points.
-- Need to write a refresh token function as currently have to manually update the token, meaning sometimes when you visit our site no artist images will be displayed.
-- Not a bug, but the code still needs some refactoring.
+- Not a bug, but the code still needs some refactoring - specifically we are currently repeating the same code in 3 components.
+- Need to write a refresh token function as currently have to manually update the token, meaning sometimes when you visit our site no artist images will be displayed. **[FIXED]** by using React's Context API and creating a custom provider (ApiProvider) which includes our API auth post request and refresh function, and then passes our token down to the components we wrapped it around in our App component. 
+
 
 ## Lessons Learned
 - Design with mobile first in mind.  
