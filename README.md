@@ -307,7 +307,7 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 ## Bugs
 - Animation bugs, the fade in scroll animation on feature pages shudders at points.
 - Not a bug, but the code still needs some refactoring - specifically we are currently repeating the same code in 3 components.
-- Need to write a refresh token function as currently have to manually update the token, meaning sometimes when you visit our site no artist images will be displayed. **[FIXED]** by using React's Context API and creating a custom provider (ApiProvider) which includes our API auth post request and refresh function, and then passes our token down to the components we wrapped it around in our App component. 
+- Need to write a refresh token function as currently have to manually update the token, meaning sometimes when you visit our site no artist images will be displayed. **[FIXED]** by using React's Context API and creating a custom provider (ApiProvider) which includes our API auth post request and refresh function, and then passes our token down to the components I wrapped it around in our App component. 
 
 
 ## Lessons Learned
