@@ -29,12 +29,12 @@ You can find our deployed project online here: [/TITLED](https://kianna.love/TIT
 
 The project must:
 
- - Consume a public API
- - Have several components
- - The app should include a router with several pages
- - Include wireframes - designed before building the app
- - Have semantically clean HTML
- - Be deployed online
+ - Consume a public API.
+ - Have several components.
+ - The app should include a router with several pages.
+ - Include wireframes - designed before building the app.
+ - Have semantically clean HTML.
+ - Be deployed online.
 
 ## Technologies Used
 
@@ -75,7 +75,7 @@ We envisioned displaying the initial 5 artists as cards on our page which would 
 
 As we only had 2 days, we had to precisely plan out what we wanted to achieve and how would would approach the build.
 
-- Step 1 - Find, and select a public API to use (*see above*)
+- Step 1 - Find, and select a public API to use (*see above*).
 - Step 2 - Work out how to use it, and what information it returns.
 - Step 3 - Plan out our MVP.
 - Step 4 - Build our MVP.
@@ -203,7 +203,7 @@ From there we could access the requested information we wanted to display on our
  
 ##### Similar Artists Functionalitiy
  
-As one of our stretch goals we decided to display the similar artists for each artist already on the page. We created a button underneath each artist which would show these similar artists when clicked. 
+I took the lead on the main functionality of our Artist Collection pages (although we pair programmed for solving the duplication issue). As one of our stretch goals we decided to display the similar artists for each artist already on the page. I created a button underneath each artist which would show these similar artists when clicked. 
 
 ```
 <button className="button-2" key={index} id={artist.id} value={artist._links.similar_artists.href} onClick={() => displaySimilar(event, index)}>Similar Artists</button>
@@ -215,15 +215,15 @@ This required additonal functionality, which was slightly complex as there were 
 
 - Accessing the nested data.
 
-We retrieved the data by storing the nested href as the button's value. We also set the button's id to be the artist id - [see above].
-This allowed us to fetch the similar artist's data from the button's value once clicked:
+I retrieved the data by storing the nested href as the button's value. I also set the button's id to be the artist id - [see above].
+This allowed me to fetch the similar artist's data from the button's value once clicked:
 
 ```js
  const id = event.target.id
       fetch(event.target.value, { headers: { 'X-XAPP-Token': `${token}` } })
 ```
 
-- Not displaying duplicates. 
+- Not displaying duplicates (pair programmed). 
 
 In order to check for duplicates we first had to combine our two arrays, our similarArtists array and our newSimilarArtists:
 ```js
@@ -243,7 +243,7 @@ If it does, this code won't run. However, if it doesn't we push the artist to ou
 
 - Option to 'hide' the similar artists when the user clicks the button a second time.
 
-When the button has been clicked (and we know if it has already been clicked from state) we set this state to be empty so that there is nothing to display:
+When the button has been clicked (and we know if it has already been clicked from state) the state is set to be empty, so that there is nothing to display:
 
 ```js
 if (buttonKey === key) {
@@ -252,7 +252,7 @@ if (buttonKey === key) {
 
 ![Animated hiding similar artists](https://media.giphy.com/media/lrPLp6hE6g0JKM5jAg/giphy.gif)
 
-We created a function called ``displaySimilar()`` which would handle all of this functionality:
+I created a function called ``displaySimilar()`` which would handle all of this functionality:
 
 ```js
 function displaySimilar(event, buttonKey) {
@@ -300,9 +300,9 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 
 - From a past solo project, I was able to figure out how to write the functionality so you can 'hide' the similar artists card on a second click. [See above]
 - Teamwork 
- - this was my first paired project and it was a great experience. We were able to easily combine our ideas and plan out how we wanted to go about our build. We spent the initial stages of the project pair programming (using the driver navigator relationship) to get the intial setup / MVP outline coded, before moving on to working on separate areas. 
+ - This was my first paired project and it was a great experience. We were able to easily combine our ideas and plan out how we wanted to go about our build. We spent the initial stages of the project pair programming (using the driver navigator relationship) to get the intial setup / MVP outline coded, before moving on to working on separate areas. 
 - Styling
- - As we were working within the same SCSS file, we had to have excellent communication to avoid conflicts. We had a lot of fun with the colour scheme and making our application's UI visually appealing. -
+ - As we were working within the same SCSS file, we had to have excellent communication to avoid conflicts. We had a lot of fun with the colour scheme and making our application's UI visually appealing. 
 
 ## Bugs
 - Animation bugs, the fade in scroll animation on feature pages shudders at points.
@@ -317,7 +317,7 @@ After this it was easy to create a couple of additional pages (Southern Gothic a
 
 ## Future Features
 
-- Fully responsive (currently not responsive)
+- Fully responsive (currently not responsive).
 - Similar artist links for each of the similar artists linked (continued accordion effect).
 
 ## Credit
