@@ -2,8 +2,6 @@ import React, { useEffect, useState, useContext } from 'react'
 import { Controller, Scene } from 'react-scrollmagic'
 import { ApiContext } from './ApiContext'
 
-
-
 const Artists = () => {
 
   const [artistsData, setArtistsData] = useState([])

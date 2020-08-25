@@ -48,7 +48,7 @@ const SouthernGothic = () => {
 
   return <div className="cardSection">
     <h1>SOUTHERN GOTHIC</h1>
-    <p>&quot;Southern Gothic—a term taken from an established tradition in American Literature—is a category for artworks that feature themes and images drawn from the dark corners of the American South. From the grotesque masked figures present in Ralph Eugene Meatyard’s black-and-white photographs to the antebellum ruins of photographer Sally Mann's images, such works might evoke folklore, oral history, local communities, concepts of the abnormal, and plantation life.&quot;</p>
+    <p>&quot;Southern Gothic—a term taken from an established tradition in American Literature—is a category for artworks that feature themes and images drawn from the dark corners of the American South. From the grotesque masked figures present in Ralph Eugene Meatyard’s black-and-white photographs to the antebellum ruins of photographer Sally Mann&apos;s images, such works might evoke folklore, oral history, local communities, concepts of the abnormal, and plantation life.&quot;</p>
     {artistsData.map((artist, index) => {
       return <div key={index}>
         <Controller>
