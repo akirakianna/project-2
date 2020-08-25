@@ -209,7 +209,7 @@ I took the lead on the main functionality of our Artist Collection pages (althou
 <button className="button-2" key={index} id={artist.id} value={artist._links.similar_artists.href} onClick={() => displaySimilar(event, index)}>Similar Artists</button>
 ```
 
-![Similar Artists Accordion](./src/styles/images/similar-artist-display.png)
+![Similar Artists Accordion](./src/styles/images/Similar-artist-display.png)
 
 This required additonal functionality, which was slightly complex as there were a few different things that needed to happen:
 
